@@ -1,4 +1,5 @@
 Feature: Capstone Project
+
   Scenario: Verify page title
     Given I launch the URL "http://the-internet.herokuapp.com/"
     Then the title of the page should be "The Internet"
