@@ -1,63 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- The root element of the Maven Project Object Model (POM) -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- Version of the POM model -->
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- project -->
     <groupId>org.example</groupId>
     <artifactId>techacademy-java-selenium</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <!-- Properties to configure the Maven compiler plugin -->
     <properties>
+        <!-- Java  version -->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <!-- Dependencies required for the project -->
     <dependencies>
-        <!-- Selenium -->
+        <!-- Selenium dependency for browser automation -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.1.2</version>
         </dependency>
-        <!-- TestNG -->
+        <!-- TestNG dependency for testing framework -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.4.0</version>
             <scope>test</scope>
         </dependency>
-        <!-- Cucumber -->
+        <!-- Cucumber dependency for BDD support -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>6.10.4</version>
         </dependency>
+        <!-- Cucumber TestNG integration -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>6.10.4</version>
         </dependency>
-        <!-- WebDriverManager -->
+        <!-- WebDriverManager for managing browser drivers -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>5.0.3</version>
         </dependency>
+        <!-- Cucumber PicoContainer for dependency injection -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
             <version>6.10.4</version>
         </dependency>
+        <!-- Guava library for various utilities -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.0.1-jre</version>
+        </dependency>
     </dependencies>
+
+    <!-- Build configuration for the project -->
     <build>
         <plugins>
+            <!-- Maven Surefire plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
                     <includes>
+                        <!-- Include pattern for test classes -->
                         <include>**/*Test.java</include>
                     </includes>
                 </configuration>
