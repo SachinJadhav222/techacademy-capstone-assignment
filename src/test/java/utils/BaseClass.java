@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -21,10 +22,15 @@ public class BaseClass {
      */
     public void setup() {
         // Setup ChromeDriver using WebDriverManager to ensure the correct version is used
-        WebDriverManager.chromedriver().setup();
+        //WebDriverManager.chromedriver().setup();
 
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/driver/chromedriver");
         // Initialize the ChromeDriver instance
-        this.driver = new ChromeDriver();
+        // Set Chrome options
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+
+        this.driver = new ChromeDriver(options);
 
         // Maximize the browser window
         this.driver.manage().window().maximize();

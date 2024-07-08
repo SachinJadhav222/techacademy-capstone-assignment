@@ -23,7 +23,7 @@ public class CucumberTestRunner extends AbstractTestNGCucumberTests {
      * @return A two-dimensional array of objects representing the scenarios to be executed.
      */
     @Override
-    @DataProvider(parallel = true)
+    @DataProvider(parallel = false)
     public Object[][] scenarios() {
         return super.scenarios();
     }

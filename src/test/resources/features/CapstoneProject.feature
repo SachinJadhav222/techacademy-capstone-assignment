@@ -12,12 +12,14 @@ Feature: Capstone Project
   # Scenario: Verify A/B Test page text
   # This scenario verifies the text on the A/B Test page.
   Scenario: Verify A/B Test page text
+    Given I launch the URL "http://the-internet.herokuapp.com/"
     When I click on "A/B Testing" link
     Then the text on the page should be "A/B Test Variation 1"
 
   # Scenario: Select option from dropdown
   # This scenario selects an option from a dropdown and verifies the selected option.
   Scenario: Select option from dropdown
+    Given I launch the URL "http://the-internet.herokuapp.com/"
     When I navigate back to the home page
     And I click on "Dropdown" link
     And I select "Option 1" from the dropdown
@@ -26,6 +28,7 @@ Feature: Capstone Project
   # Scenario: Verify hyperlinks on Frames page
   # This scenario verifies the presence of hyperlinks on the Frames page.
   Scenario: Verify hyperlinks on Frames page
+    Given I launch the URL "http://the-internet.herokuapp.com/"
     When I navigate back to the home page
     And I click on "Frames" link
     Then "Nested Frames" link should be present
